@@ -9,7 +9,7 @@ using System.IO;
 
 namespace PDFTools
 {
-    static class Program
+    public class Program
     {
         /// <summary>
         /// The main entry point for the application.
@@ -27,9 +27,16 @@ namespace PDFTools
             Directory.CreateDirectory(workingDir);
         }
 
-        static void Invert(string filename)
+        public void Invert(string filename)
         {
+            PdfDocument inputDocument = PdfReader.Open(filename, PdfDocumentOpenMode.Import);
+            PdfDocument outputDocument = new PdfDocument();
 
+            for(int index = inputDocument.PageCount; index < 1; index--) {
+                outputDocument.AddPage(inputDocument.Pages[index]);
+            }
+
+            outputDocument.Save(filename);
         }
     }
 }
