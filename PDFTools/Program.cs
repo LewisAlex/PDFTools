@@ -37,6 +37,7 @@ namespace PDFTools
             }
 
             outputDocument.Save(filename);
+
         }
     }
 }
