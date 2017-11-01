@@ -28,11 +28,11 @@
         private void InitializeComponent()
         {
             this.ofdPDFToConvert = new System.Windows.Forms.OpenFileDialog();
-            this.grpbFiles = new System.Windows.Forms.GroupBox();
-            this.txtFilenames = new System.Windows.Forms.RichTextBox();
             this.btnOpen = new System.Windows.Forms.Button();
             this.btnReorder = new System.Windows.Forms.Button();
-            this.grpbFiles.SuspendLayout();
+            this.pnlFiles = new System.Windows.Forms.Panel();
+            this.lblFiles = new System.Windows.Forms.Label();
+            this.lblNbConversion = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ofdPDFToConvert
@@ -40,34 +40,11 @@
             this.ofdPDFToConvert.Filter = "Portable Document File (PDF)|*.pdf";
             this.ofdPDFToConvert.Multiselect = true;
             // 
-            // grpbFiles
-            // 
-            this.grpbFiles.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.grpbFiles.Controls.Add(this.txtFilenames);
-            this.grpbFiles.Location = new System.Drawing.Point(12, 12);
-            this.grpbFiles.Name = "grpbFiles";
-            this.grpbFiles.Size = new System.Drawing.Size(400, 262);
-            this.grpbFiles.TabIndex = 0;
-            this.grpbFiles.TabStop = false;
-            this.grpbFiles.Text = "Fichier(s)";
-            // 
-            // txtFilenames
-            // 
-            this.txtFilenames.BackColor = System.Drawing.SystemColors.Control;
-            this.txtFilenames.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFilenames.Enabled = false;
-            this.txtFilenames.Location = new System.Drawing.Point(6, 20);
-            this.txtFilenames.Name = "txtFilenames";
-            this.txtFilenames.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
-            this.txtFilenames.Size = new System.Drawing.Size(398, 236);
-            this.txtFilenames.TabIndex = 0;
-            this.txtFilenames.Text = "";
-            // 
             // btnOpen
             // 
-            this.btnOpen.Location = new System.Drawing.Point(12, 280);
+            this.btnOpen.Location = new System.Drawing.Point(7, 220);
             this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(119, 25);
+            this.btnOpen.Size = new System.Drawing.Size(125, 25);
             this.btnOpen.TabIndex = 1;
             this.btnOpen.Text = "&Parcourir ...";
             this.btnOpen.UseVisualStyleBackColor = true;
@@ -75,39 +52,68 @@
             // 
             // btnReorder
             // 
-            this.btnReorder.Location = new System.Drawing.Point(137, 280);
+            this.btnReorder.Location = new System.Drawing.Point(137, 220);
             this.btnReorder.Name = "btnReorder";
-            this.btnReorder.Size = new System.Drawing.Size(275, 24);
+            this.btnReorder.Size = new System.Drawing.Size(277, 25);
             this.btnReorder.TabIndex = 2;
             this.btnReorder.Text = "Réordonner";
             this.btnReorder.UseVisualStyleBackColor = true;
             this.btnReorder.Click += new System.EventHandler(this.btnReorder_Click);
+            // 
+            // pnlFiles
+            // 
+            this.pnlFiles.AutoScroll = true;
+            this.pnlFiles.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.pnlFiles.Location = new System.Drawing.Point(2, 25);
+            this.pnlFiles.Name = "pnlFiles";
+            this.pnlFiles.Size = new System.Drawing.Size(419, 169);
+            this.pnlFiles.TabIndex = 3;
+            // 
+            // lblFiles
+            // 
+            this.lblFiles.AutoSize = true;
+            this.lblFiles.Location = new System.Drawing.Point(5, 6);
+            this.lblFiles.Name = "lblFiles";
+            this.lblFiles.Size = new System.Drawing.Size(49, 13);
+            this.lblFiles.TabIndex = 4;
+            this.lblFiles.Text = "Fichier(s)";
+            // 
+            // lblNbConversion
+            // 
+            this.lblNbConversion.AutoSize = true;
+            this.lblNbConversion.Location = new System.Drawing.Point(8, 201);
+            this.lblNbConversion.Name = "lblNbConversion";
+            this.lblNbConversion.Size = new System.Drawing.Size(0, 13);
+            this.lblNbConversion.TabIndex = 5;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(424, 306);
+            this.ClientSize = new System.Drawing.Size(423, 247);
+            this.Controls.Add(this.lblNbConversion);
+            this.Controls.Add(this.lblFiles);
+            this.Controls.Add(this.pnlFiles);
             this.Controls.Add(this.btnReorder);
             this.Controls.Add(this.btnOpen);
-            this.Controls.Add(this.grpbFiles);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.KeyPreview = true;
             this.Name = "frmMain";
             this.Text = "PDFTools by Lewis";
-            this.grpbFiles.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.OpenFileDialog ofdPDFToConvert;
-        private System.Windows.Forms.GroupBox grpbFiles;
-        private System.Windows.Forms.RichTextBox txtFilenames;
         private System.Windows.Forms.Button btnOpen;
         private System.Windows.Forms.Button btnReorder;
+        private System.Windows.Forms.Panel pnlFiles;
+        private System.Windows.Forms.Label lblFiles;
+        private System.Windows.Forms.Label lblNbConversion;
     }
 }
 
